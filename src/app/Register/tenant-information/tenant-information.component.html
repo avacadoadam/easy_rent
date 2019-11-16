@@ -1,0 +1,11 @@
+<mat-horizontal-stepper #stepper>
+  <mat-step [stepControl]="verify">
+    <app-add-verification (next)="nextStep()"></app-add-verification>
+  </mat-step>
+  <mat-step [stepControl]="addDocs">
+    <app-add-docs></app-add-docs>
+  </mat-step>
+  <mat-step [stepControl]="work">
+    <app-work-information></app-work-information>
+  </mat-step>
+</mat-horizontal-stepper>

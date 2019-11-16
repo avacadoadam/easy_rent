@@ -1,0 +1,33 @@
+<!--  <mat-form-field>-->
+<!--    List length:-->
+<!--    <input matInput [(ngModel)]="length">-->
+<!--  </mat-form-field>-->
+
+
+<!--  <mat-paginator [length]="length"-->
+<!--                 [pageSize]="pageSize"-->
+<!--                 [pageSizeOptions]="pageSizeOptions"-->
+<!--                 (page)="pageEvent = $event">-->
+<!--  </mat-paginator>-->
+
+<!--  <div *ngIf="pageEvent">-->
+<!--    <h5>Page Change Event Properties</h5>-->
+<!--    <div>List length: {{pageEvent.length}}</div>-->
+<!--    <div>Page size: {{pageEvent.pageSize}}</div>-->
+<!--    <div>Page index: {{pageEvent.pageIndex}}</div>-->
+<!--  </div>-->
+
+<mat-grid-list cols="3" rowHeight="1:1" gutterSize="5px">
+
+  <mat-grid-tile *ngFor="let propertyLet of property | async">
+
+    <app-cards [property]="propertyLet"></app-cards>
+
+  </mat-grid-tile>
+  <mat-grid-tile *ngFor="let propertyLet of property | async">
+
+    <app-cards [property]="propertyLet"></app-cards>
+
+  </mat-grid-tile>
+
+</mat-grid-list>

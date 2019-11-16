@@ -1,0 +1,29 @@
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <a hidden routerLink="/" mat-button>home page</a>
+<!--    wait for response , while waiting show ghost -> then show response-->
+
+    <div id="accountOptions">
+      <div *ngIf="!init" class="loading "></div>
+      <div *ngIf="!init" class="loading delayLoadingAnimation"></div>
+      <a *ngIf="!isUserLoggedIn && init" routerLink="register" mat-button>Register</a>
+      <a *ngIf="!isUserLoggedIn && init" routerLink="login" mat-button>Log In</a>
+      <a *ngIf="isUserLoggedIn && init" mat-button (click)="auth.logOut()" routerLink="">log out</a>
+      <div>
+        <mat-card *ngIf="isUserLoggedIn && init" class="user_profile" routerLink="account">
+          <!--        <img mat-card-avatar [src]="userProfilePicture" alt="profilePic">-->
+          <mat-card-header>
+            <img mat-card-avatar
+                 [src]="'https://qph.fs.quoracdn.net/main-raw-321357379-vfmlarrjaymkukxtsavlrhfsfvajokbs.jpeg'"
+                 alt="profilePic">
+<!--            <mat-card-subtitle id="card-subtitle-name">{{userName}}</mat-card-subtitle>-->
+            <mat-card-subtitle id="card-subtitle-account">Account</mat-card-subtitle>
+          </mat-card-header>
+        </mat-card>
+      </div>
+    </div>
+
+  </mat-toolbar-row>
+</mat-toolbar>
+
+

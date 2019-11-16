@@ -1,0 +1,74 @@
+#accountOptions {
+  margin-left: auto;
+  display: flex;
+}
+
+.user_profile {
+  border-radius: 20px;
+  padding: 0;
+  margin: 0;
+
+  * {
+    padding: 0;
+    margin: 0;
+  }
+
+  mat-card-subtitle {
+    height: 40px;
+    width: 0;
+    overflow: hidden;
+    transition: width 1s linear;
+  }
+
+  &:hover {
+    mat-card-subtitle {
+      width: 100%;
+    }
+  }
+}
+
+$base-color: #ddd;
+$shine-color: #e8e8e8;
+$animation-duration: 1.6s;
+$avatar-offset: 52 + 16;
+$location: 0%;
+.loading {
+  background: linear-gradient(90deg, $base-color 0%, $shine-color 0%, $base-color 100%);
+  width: 80px;
+  height: 40px;
+  margin: 10px;
+  border-radius: 10px;
+  opacity: 10%;
+  animation-name: flash,pulse;
+  animation-duration: 4s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+@keyframes pulse {
+  from {
+    transform: scale3d(1, 1, 1);
+  }
+
+  50% {
+    transform: scale3d(1.05, 1.05, 1.05);
+  }
+
+  to {
+    transform: scale3d(1, 1, 1);
+  }
+}
+@keyframes flash {
+  from,
+  50%,
+  to {
+    opacity: 0.6;
+  }
+
+  25%,
+  75% {
+    opacity: 0;
+  }
+}
+
+

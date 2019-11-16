@@ -1,0 +1,8 @@
+<mat-card id="AlreadyLoggedInPopup">
+  <mat-card-header>
+    <mat-card-title>You are already Logged In</mat-card-title>
+  <mat-card-subtitle> you must log out or continue as this user</mat-card-subtitle>
+    <button mat-button (click)="logOut()">Log out</button>
+    <button mat-button (click)="navToAccount()">Continue as {{name}}</button>
+  </mat-card-header>
+</mat-card>

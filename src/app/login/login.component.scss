@@ -1,0 +1,41 @@
+.container {
+  max-height: 100vh;
+  margin: auto;
+  text-align: center;
+  width: 600px;
+
+  * {
+    //center
+
+  }
+
+}
+
+mat-button-toggle-group {
+  width: 100%;
+
+  .rightbutton {
+    border-bottom-left-radius: 0;
+    border-top-left-radius: 0;
+
+  }
+
+  .leftButton {
+    border-bottom-right-radius: 0;
+    border-top-right-radius: 0;
+  }
+
+  mat-button-toggle {
+    width: 100%;
+  }
+
+}
+.emailRegForm {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+}
+
+.inputField {
+  width: 100%;
+}

@@ -1,0 +1,39 @@
+<app-header></app-header>
+<mat-card class="container" >
+  <h1>Account Log in</h1>
+<mat-tab-group mat-align-tabs="center">
+  <mat-tab>
+    <ng-template mat-tab-label>
+      <i class="material-icons">email</i>
+      Register with email.
+    </ng-template>
+    <form class="emailRegForm" [formGroup]="rForm" (ngSubmit)="emailLogin()">
+      <mat-form-field class="inputField">
+        <mat-label>enter your email</mat-label>
+        <input matInput formControlName="email" placeholder="email" type="email" [formGroup]="rForm">
+      </mat-form-field>
+
+      <mat-form-field class="inputField">
+        <mat-label>enter password</mat-label>
+        <input matInput placeholder="password" type="password" formControlName="password" [formGroup]="rForm">
+        <mat-hint align="end">Must be longer then 8 digits</mat-hint>
+      </mat-form-field>
+      <button mat-raised-button type="submit" [disabled]="!this.rForm.valid">Login</button>
+
+      <mat-error *ngIf=" rForm.controls.email.errors && rForm.controls.email.touched">not valid email</mat-error>
+      <mat-error *ngIf=" rForm.controls.password.errors && rForm.controls.password.touched">Not valid password
+      </mat-error>
+      <mat-error *ngIf="error">{{error}}</mat-error>
+    </form>
+
+  </mat-tab>
+
+  <mat-tab>
+    <ng-template mat-tab-label>
+      Social Media Register
+    </ng-template>
+    <app-social-media (requestFacebookLogin)="facebookLogin()"
+                      (requestGoogleLogin)="GoogleLogin()"></app-social-media>
+  </mat-tab>
+</mat-tab-group>
+</mat-card>

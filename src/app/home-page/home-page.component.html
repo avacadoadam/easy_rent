@@ -1,0 +1,29 @@
+<app-header></app-header>
+<mat-toolbar-row>
+  <button mat-raised-button #searchbutton id="searchButton" (click)="drawer.toggle()" >
+    <i class="material-icons">search</i>
+    Search
+  </button>
+
+
+  <mat-paginator [length]="length"
+                 [pageSize]="pageSize"
+                 [pageSizeOptions]="pageSizeOptions"
+                 (page)="pageEvent = $event">
+  </mat-paginator>
+
+  <div *ngIf="pageEvent">
+    <h5>Page Change Event Properties</h5>
+    <div>List length: {{pageEvent.length}}</div>
+    <div>Page size: {{pageEvent.pageSize}}</div>
+    <div>Page index: {{pageEvent.pageIndex}}</div>
+  </div>
+</mat-toolbar-row>
+<mat-drawer-container class="example-container" hasBackdrop="true">
+  <mat-drawer #drawer mode="side" closed>
+    <app-search-bar></app-search-bar>
+  </mat-drawer>
+  <mat-drawer-content>
+    <app-rent-listings></app-rent-listings>
+  </mat-drawer-content>
+</mat-drawer-container>

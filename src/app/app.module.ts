@@ -16,7 +16,7 @@ import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
 import {HeaderComponent} from './header/header.component';
 import {MatFormFieldModule} from '@angular/material/form-field';
-import {MatInputModule, MatSidenavModule} from '@angular/material';
+import {MatExpansionModule, MatInputModule, MatSidenavModule, MatSnackBar} from '@angular/material';
 import { RentListingsComponent } from './rent-listings/rent-listings.component';
 import {MatCardModule} from '@angular/material/card';
 import {MatDividerModule} from '@angular/material/divider';
@@ -29,13 +29,24 @@ import {MatListModule} from '@angular/material/list';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import { LandlordComponent } from './User/landlord/landlord.component';
 import {MatStepperModule} from '@angular/material/stepper';
-import { RegisterLandlordComponent } from './Register/register-landlord/register-landlord.component';
 import { ChooseAccountTypeComponent } from './Register/choose-account-type/choose-account-type.component';
 import { EmailRegisterComponent } from './Register/registerProcess/email-register/email-register.component';
 import {MatBadgeModule} from '@angular/material/badge';
-import {RegisterTenantComponent} from './Register/register-tenant/register-tenant.component';
 import { CardsComponent } from './cards/cards.component';
 import {MatIconModule} from '@angular/material/icon';
+import {MatTabsModule} from '@angular/material/tabs';
+import { JwSocialButtonsModule } from 'jw-angular-social-buttons';
+import { SocialMediaComponent } from './Register/registerProcess/social-media/social-media.component';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
+import { AddVerificationComponent } from './Register/registerProcess/add-verification/add-verification.component';
+import {MatButtonToggleModule} from '@angular/material/button-toggle';
+import { TenantInformationComponent } from './Register/tenant-information/tenant-information.component';
+import { AddDocsComponent } from './Register/registerProcess/add-docs/add-docs.component';
+import { WorkInformationComponent } from './Register/registerProcess/work-information/work-information.component';
+import { TestComponent } from './test/test.component';
+import { LoginComponent } from './login/login.component';
+import { AccountComponent } from './account/account.component';
+import { AlreadyLoggedInComponent } from './Register/already-logged-in/already-logged-in.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -45,11 +56,18 @@ import {MatIconModule} from '@angular/material/icon';
     HomePageComponent,
     ListPropertyComponent,
     LandlordComponent,
-    RegisterTenantComponent,
-    RegisterLandlordComponent,
     ChooseAccountTypeComponent,
     EmailRegisterComponent,
-    CardsComponent
+    CardsComponent,
+    SocialMediaComponent,
+    AddVerificationComponent,
+    TenantInformationComponent,
+    AddDocsComponent,
+    WorkInformationComponent,
+    TestComponent,
+    LoginComponent,
+    AccountComponent,
+    AlreadyLoggedInComponent
   ],
   imports: [
     BrowserModule,
@@ -76,7 +94,12 @@ import {MatIconModule} from '@angular/material/icon';
     ReactiveFormsModule,
     MatBadgeModule,
     MatIconModule,
-    MatRippleModule
+    MatRippleModule,
+    MatTabsModule,
+    JwSocialButtonsModule,
+    MatSnackBarModule,
+    MatExpansionModule,
+    MatButtonToggleModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

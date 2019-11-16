@@ -1,0 +1,70 @@
+<mat-accordion >
+  <h2>Link the following Information to create a more appealing account for landlords.</h2>
+  <mat-expansion-panel [disabled]="isPhoneVerified">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        <i class="material-icons">phone</i>
+        Verify Your phone
+      </mat-panel-title>
+      <i class="material-icons verified_icon Extension"
+         [style.color]="isPhoneVerified ? 'green' : 'black' ">verified_user</i>
+
+    </mat-expansion-panel-header>
+    <mat-form-field>
+      <input matInput type="tel" placeholder="Your telephone"  [(ngModel)]="phoneNumber">
+    </mat-form-field>
+    <!--        <mat-hint>Must be a Irish Number</mat-hint>-->
+    <object data="assets/ireland.svg" type="" width="25px" height="25px">
+    </object>
+    <button mat-raised-button (click)="verifyPhone()">Verify</button>
+    <mat-action-row>
+      <button mat-button color="primary" (click)="VerifyPhone()">Verify</button>
+      <div id="phoneVerifyReCapthcha"></div>
+    </mat-action-row>
+  </mat-expansion-panel>
+  <mat-expansion-panel [disabled]="isEmailVerified">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        <i class="material-icons ">email</i>
+        verify your email
+      </mat-panel-title>
+      <i class="material-icons verified_icon Extension"  [style.color]="isEmailVerified ? 'green' : 'black' ">verified_user</i>
+    </mat-expansion-panel-header>
+    <mat-form-field>
+      <input matInput type="email" placeholder="Your email">
+    </mat-form-field>
+  </mat-expansion-panel>
+  <mat-expansion-panel [disabled]="true">
+    <mat-expansion-panel-header>
+      <button mat-raised-button color="primary" id="facebookLogin" [disabled]="isFacebookVerified" (click)="addFacebook()">
+        <object data="assets/facebook.svg" type="" width="25px" height="25px">
+          <img
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRzdrpnXZKOj8dRkYimj2XDp33cUk3aM7zGsvhXzvE2-LauoImS"
+            alt="fb" width="25px" height="25px">
+        </object>
+        Add Facebook
+      </button>
+      <i class="material-icons verified_icon nonExtension" [style.color]="isFacebookVerified ? 'green' : 'black' ">verified_user</i>
+    </mat-expansion-panel-header>
+  </mat-expansion-panel>
+  <mat-expansion-panel [disabled]="true">
+    <mat-expansion-panel-header>
+      <button mat-raised-button id="googleLogin" [disabled]="isGoogleVerified" (click)="addGoogle()">
+        <object data="assets/google.svg" type="" width="25px" height="25px">
+          <img
+            src="https://lh3.googleusercontent.com/twEQbhqcvE_WhW3punY7jGS4JxP0d71BpOVulQWA-Fp27vo8h9JoEMqAx90y0CW9aJRs=s85"
+            alt="fb" width="25px" height="25px">
+        </object>
+        Add Google Account
+      </button>
+      <i class="material-icons verified_icon nonExtension"  [style.color]="isGoogleVerified ? 'green' : 'black' ">verified_user</i>
+    </mat-expansion-panel-header>
+  </mat-expansion-panel>
+
+
+
+
+
+</mat-accordion>
+
+<button mat-raised-button (click)="finished()">finished</button>

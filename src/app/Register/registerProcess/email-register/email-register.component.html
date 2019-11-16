@@ -1,0 +1,25 @@
+<form class="emailRegForm" [formGroup]="rForm" (ngSubmit)="submit()">
+  <mat-form-field class="inputField">
+    <mat-label>enter your email</mat-label>
+    <input matInput formControlName="email" placeholder="email" type="email" [formGroup]="rForm">
+  </mat-form-field>
+
+  <mat-form-field class="inputField">
+    <mat-label>enter password</mat-label>
+    <input matInput placeholder="password" type="password" formControlName="password" [formGroup]="rForm">
+    <mat-hint align="end">Must be longer then 8 digits</mat-hint>
+  </mat-form-field>
+  <mat-form-field class="inputField">
+    <mat-label>Re-enter your password</mat-label>
+    <input matInput formControlName="retypePassword" placeholder="retype Password" type="password" [formGroup]="rForm">
+    <mat-hint align="end">Must match existing password</mat-hint>
+  </mat-form-field>
+  <button mat-raised-button type="submit" [disabled]="!this.rForm.valid">Register</button>
+
+  <mat-error *ngIf=" rForm.controls.email.errors && rForm.controls.email.touched">not valid email</mat-error>
+  <mat-error *ngIf=" rForm.controls.password.errors && rForm.controls.password.touched">Not valid password</mat-error>
+  <mat-error *ngIf=" rForm.controls.retypePassword.errors && rForm.controls.retypePassword.touched ">Passwords do not match</mat-error>
+  <mat-error *ngIf="error">{{error}}</mat-error>
+
+
+</form>

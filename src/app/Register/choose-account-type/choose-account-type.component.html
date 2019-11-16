@@ -1,0 +1,24 @@
+<app-header></app-header>
+<mat-card class="container" >
+  <h1>Account Set up</h1>
+
+  <mat-tab-group mat-align-tabs="center">
+    <mat-tab>
+      <ng-template mat-tab-label>
+        <i class="material-icons">email</i>
+        Register with email.
+      </ng-template>
+      <app-email-register (email)="register($event)">
+      </app-email-register>
+
+    </mat-tab>
+
+    <mat-tab>
+      <ng-template mat-tab-label>
+        Social Media Register
+      </ng-template>
+      <app-social-media (requestFacebookLogin)="facebookLogin()"
+                        (requestGoogleLogin)="GoogleLogin()"></app-social-media>
+    </mat-tab>
+  </mat-tab-group>
+</mat-card>
