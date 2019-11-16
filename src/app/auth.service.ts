@@ -11,11 +11,7 @@ export class AuthService {
 
   constructor(private afAuth: AngularFireAuth) {
     afAuth.auth.onAuthStateChanged(user => {
-      if (user) {
-        this.isUserLoggedIn = true;
-      } else {
-        this.isUserLoggedIn = false;
-      }
+      this.isUserLoggedIn = !!user;
     });
   }
 
