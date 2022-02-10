@@ -30,7 +30,7 @@
     "jw-angular-social-buttons": "^1.0.0",
     "libphonenumber-js": "^1.7.26",
     "material-design-icons": "^3.0.1",
-    "node-sass": "^4.13.0",
+    "node-sass": "^7.0.0",
     "rxjs": "~6.3.3",
     "tslib": "^1.10.0",
     "zone.js": "~0.8.26"
